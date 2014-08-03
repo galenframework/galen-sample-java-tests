@@ -18,7 +18,7 @@ import java.util.Properties;
 
 import static java.util.Arrays.asList;
 
-public class GalenTestBase {
+public abstract class GalenTestBase {
 
     private static final String ENV_URL = "http://testapp.galenframework.com";
     protected WebDriver driver;
