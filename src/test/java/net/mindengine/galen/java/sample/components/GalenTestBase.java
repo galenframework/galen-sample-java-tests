@@ -23,13 +23,12 @@ public abstract class GalenTestBase {
     private static final String ENV_URL = "http://testapp.galenframework.com";
     protected WebDriver driver;
 
-
     public void checkLayout(WebDriver driver, String specPath, List<String> includedTags) throws IOException {
         String title = "Check layout " + specPath;
         LayoutReport layoutReport = Galen.checkLayout(driver, specPath, includedTags, null, new Properties(), null);
         report.get().layout(layoutReport, title);
 
-        if (layoutReport.getValidationErrors().size() > 0) {
+        if (layoutReport.errors() > 0) {
             throw new RuntimeException("Incorrect layout: " + title);
         }
     }
