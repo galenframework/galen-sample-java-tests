@@ -24,7 +24,7 @@
     <dependency>
       <groupId>net.mindengine</groupId>
       <artifactId>galen</artifactId>
-      <version>1.2.0</version>
+      <version>1.5.1</version>
     </dependency>
   </dependencies>
   <build>
