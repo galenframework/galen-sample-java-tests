@@ -18,13 +18,13 @@
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
-      <version>6.8.5</version>
+      <version>6.9.4</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>net.mindengine</groupId>
       <artifactId>galen</artifactId>
-      <version>1.5.1</version>
+      <version>1.6.4</version>
     </dependency>
   </dependencies>
   <build>
