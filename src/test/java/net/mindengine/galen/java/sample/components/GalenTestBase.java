@@ -1,49 +1,22 @@
 package net.mindengine.galen.java.sample.components;
 
-import net.mindengine.galen.api.Galen;
-import net.mindengine.galen.java.sample.components.GalenReportsContainer;
-import net.mindengine.galen.reports.TestReport;
-import net.mindengine.galen.reports.model.LayoutReport;
+import net.mindengine.galen.testng.GalenTestNgTestBase;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 
-import java.io.IOException;
-import java.lang.reflect.Method;
 import java.util.List;
-import java.util.Properties;
 
 import static java.util.Arrays.asList;
 
-public abstract class GalenTestBase {
+public abstract class GalenTestBase extends GalenTestNgTestBase {
 
     private static final String ENV_URL = "http://testapp.galenframework.com";
-    protected WebDriver driver;
 
-    public void checkLayout(WebDriver driver, String specPath, List<String> includedTags) throws IOException {
-        String title = "Check layout " + specPath;
-        LayoutReport layoutReport = Galen.checkLayout(driver, specPath, includedTags, null, new Properties(), null);
-        report.get().layout(layoutReport, title);
-
-        if (layoutReport.errors() > 0) {
-            throw new RuntimeException("Incorrect layout: " + title);
-        }
-    }
-
-    ThreadLocal<TestReport> report = new ThreadLocal<TestReport>();
-
-    @BeforeMethod
-    public void initReport(Method method) {
-        report.set(GalenReportsContainer.get().registerTest(method));
-    }
-
-    @BeforeMethod
-    public void createDriver(Object [] args) {
-        driver = new FirefoxDriver();
-
+    @Override
+    public WebDriver createDriver(Object[] args) {
+        WebDriver driver = new FirefoxDriver();
         if (args.length > 0) {
             if (args[0] != null && args[0] instanceof TestDevice) {
                 TestDevice device = (TestDevice)args[0];
@@ -52,16 +25,11 @@ public abstract class GalenTestBase {
                 }
             }
         }
+        return driver;
     }
-
-    @AfterMethod
-    public void quitDriver() {
-        driver.quit();
-    }
-
 
     public void load(String uri) {
-        driver.get(ENV_URL + uri);
+        getDriver().get(ENV_URL + uri);
     }
 
     @DataProvider(name = "devices")
@@ -73,9 +41,6 @@ public abstract class GalenTestBase {
         };
     }
 
-
-
-
     public static class TestDevice {
         private final String name;
         private final Dimension screenSize;
@@ -86,7 +51,6 @@ public abstract class GalenTestBase {
             this.screenSize = screenSize;
             this.tags = tags;
         }
-
 
         public String getName() {
             return name;

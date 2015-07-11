@@ -23,8 +23,8 @@
     </dependency>
     <dependency>
       <groupId>net.mindengine</groupId>
-      <artifactId>galen</artifactId>
-      <version>1.2.0</version>
+      <artifactId>galen-java-support</artifactId>
+      <version>1.6.5-SNAPSHOT</version>
     </dependency>
   </dependencies>
   <build>
@@ -47,7 +47,7 @@
             <property><name>usedefaultlisteners</name><value>false</value></property>
             <property>
               <name>listener</name>
-              <value>net.mindengine.galen.java.sample.components.GalenReportingListener</value>
+              <value>net.mindengine.galen.testng.GalenTestNgReportsListener</value>
             </property>
           </properties>
         </configuration>
