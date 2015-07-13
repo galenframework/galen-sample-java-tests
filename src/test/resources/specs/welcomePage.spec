@@ -10,13 +10,6 @@
 
 = Content =
     @on *
-        @if ${isPresent("welcome-block-2")}
-            welcome-block:
-                inside content ~ 20px top left right
-        @else
-            welcome-block:
-                absent
-
         text-block-1, login-button, text-block-3:
             inside welcome-block ~30px left
 
