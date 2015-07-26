@@ -1,6 +1,7 @@
-package net.mindengine.galen.java.sample.tests;
+package com.galenframework.java.sample.tests;
 
-import net.mindengine.galen.java.sample.components.GalenTestBase;
+import com.galenframework.java.sample.components.GalenTestBase;
+import com.galenframework.java.sample.components.GalenTestBase;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 

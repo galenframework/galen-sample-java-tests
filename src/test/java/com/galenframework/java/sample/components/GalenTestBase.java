@@ -1,6 +1,6 @@
-package net.mindengine.galen.java.sample.components;
+package com.galenframework.java.sample.components;
 
-import net.mindengine.galen.testng.GalenTestNgTestBase;
+import com.galenframework.testng.GalenTestNgTestBase;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
