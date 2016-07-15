@@ -63,5 +63,10 @@ public abstract class GalenTestBase extends GalenTestNgTestBase {
         public List<String> getTags() {
             return tags;
         }
+
+        @Override
+        public String toString() {
+            return String.format("%s %dx%d", name, screenSize.width, screenSize.height);
+        }
     }
 }
