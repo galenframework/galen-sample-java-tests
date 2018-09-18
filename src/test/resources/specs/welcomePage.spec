@@ -19,12 +19,12 @@
 
         text-block-1:
             height > 20px
-            above login-button 10 to 50 px
+            above login-button 60 to 130 px
 
         login-button:
             height ~ 45px
             text is "Login"
-            above text-block-3 10 to 50px
+            above text-block-3 -70 to 0px
 
 
     @on desktop
