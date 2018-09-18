@@ -1,22 +1,23 @@
 package com.galenframework.java.sample.components;
 
-import com.galenframework.testng.GalenTestNgTestBase;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.DataProvider;
+import static java.util.Arrays.asList;
 
 import java.util.List;
 
-import static java.util.Arrays.asList;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.DataProvider;
+
+import com.galenframework.testng.GalenTestNgTestBase;
 
 public abstract class GalenTestBase extends GalenTestNgTestBase {
 
     private static final String ENV_URL = "http://testapp.galenframework.com";
 
     @Override
-    public WebDriver createDriver(Object[] args) {
-        WebDriver driver = new FirefoxDriver();
+    public WebDriver createDriver(Object[] args) {   	
+        WebDriver driver = new ChromeDriver();
         if (args.length > 0) {
             if (args[0] != null && args[0] instanceof TestDevice) {
                 TestDevice device = (TestDevice)args[0];

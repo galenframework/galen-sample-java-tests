@@ -1,11 +1,11 @@
 package com.galenframework.java.sample.tests;
 
-import com.galenframework.java.sample.components.GalenTestBase;
-import com.galenframework.java.sample.components.GalenTestBase;
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
+import com.galenframework.java.sample.components.GalenTestBase;
 
 
 public class WelcomePageTest extends GalenTestBase {
@@ -22,5 +22,4 @@ public class WelcomePageTest extends GalenTestBase {
         getDriver().findElement(By.xpath("//button[.='Login']")).click();
         checkLayout("/specs/loginPage.spec", device.getTags());
     }
-
 }

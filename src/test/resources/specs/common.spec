@@ -60,7 +60,7 @@
 
         @forEach [menu-item-*] as menuItem, prev as previousMenuItem
             ${menuItem}:
-                right-of ${previousMenuItem} 0 to 5px
+                right-of ${previousMenuItem} -1 to 4px
                 aligned horizontally all ${previousMenuItem}
 
 
@@ -74,7 +74,7 @@
 
         @for [ 1, 3 ] as index
             menu-item-${index}:
-                near menu-item-${index + 1}  0 to 5 px left
+                near menu-item-${index + 1} -1 to 4px left
 
 
 = Content =
@@ -91,5 +91,5 @@
 
 = Footer =
     footer:
-        height ~ 200px
+        height ~ 150px
         below content 0px
